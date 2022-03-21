@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar d-flex-top fixed-top" role="navigation" aria-label="main navigation" style="background-color: black;  border-bottom: solid red;">
+        <div class="navbar-brand">
+          
+           <h3 style="width: 100px;background-color: black;"><b style="font-size: 60px; margin-left: 30px; color: white;">News</b></h3>
+
+
+
+
+           <div id="navbarBasicExample" class="navbar-menu" style="margin-left: 200px;">
+            <div class="navbar-start">
+              <a class="navbar-item">
+                <p style="color: white;">Home</p>
+              </a>
+        
+              <a class="navbar-item">
+                <p style="color: white;">Documentation</p>
+              </a>
+        
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  <p style="color: white;">More</p>
+                </a>
+        
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    About
+                  </a>
+                  <a class="navbar-item">
+                    Jobs
+                  </a>
+                  <a class="navbar-item">
+                    Contact
+                  </a>
+                  <hr class="navbar-divider">
+                  <a class="navbar-item">
+                    Report an issue
+                  </a>
+                </div>
+              </div>
+            </div>
+      
+        
+        </div>
+
+
+        <div style="display: flex; margin-left: 50px; margin-top: 17px;" >
+          <i class="fab fa-telegram" style="font-size: 50px; "></i>
+          <i class="fab fa-facebook" style="font-size: 50px; margin-left: 15px;"></i>
+          <i class="fab fa-youtube" style="font-size: 50px; margin-left: 15px;"></i>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu" style="margin-left: 500px;">
+       
+      
+
+
+         
+           
+        
+
+
+
+
+
+          <div class="navbar-end" style="margin-bottom:10px; margin-top: 10px;">
+            <div class="navbar-item">
+              <div class="buttons">
+                
+
+                <form action="{% url 'search_results' %}" method="GET" style="margin-top: px; margin-right: 10px; display: flex; margin-bottom: 7px;">
+                  <button class="" style="width: 50px; background-color: yellow; border-radius: 5px;"><i class="fas fa-search" style="color: black; font-size: 30px;"></i></button>
+                  <input type="text" name="search" class="input">
+                  
+                </form>
+
+
+
+                <a class="button is-primary" href="{% url 'register' %}">Sign up</a> 
+                </a>
+                <a href="{% url 'login' %}" class="button is-link">
+                  Log in
+                </a>
+                <a href="{% url 'logout' %}" class="button is-danger">
+                  logout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+        {% block content %}
+
+
+        
+
+
+
+
+
+        {% endblock %}
+
+
+
+
+
+
+
+
+      <footer class="footer" style="background-color: black;">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+          
+        </div>
+        <div style="display: flex; margin-left: 840px;" >
+          <i class="fab fa-telegram" style="font-size: 50px; "></i>
+          <i class="fab fa-facebook" style="font-size: 50px; margin-left: 15px;"></i>
+          <i class="fab fa-youtube" style="font-size: 50px; margin-left: 15px;"></i>
+        </div>
+        <h3 style="text-align: center;"><b style="font-size: 50px;  color: white;">News</b></h3>
+        
+      </footer>
+</body>
+</html>

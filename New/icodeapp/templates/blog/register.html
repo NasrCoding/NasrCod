@@ -1,0 +1,45 @@
+{% extends 'blog/index.html'%}
+
+{% load static%}
+
+{% block content %}
+
+<div class="section">
+    <h2 class="title is-2 has-font-weight-light">Ro'yhatdan o'tish</h2>
+    <div class="columns box is-centred">
+        <div class="column is-8">
+        
+        
+            <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+                    
+            <h5 class="title is-5">{{form.username.label}}</h5>
+            <span >{{form.username}}</span>
+
+
+            <h5 class="title is-5">{{form.fullName.label}}</h5>
+            <span>{{form.fullName}}</span>
+            
+           
+            
+            <h5 class="title is-5">{{form.email.label}}</h5>
+            <span>{{form.email}}</span>
+
+            <h5 class="title is-5">{{form.password1.label}}</h5>
+            <span >{{form.password1}}</span>
+
+            <h5 class="title is-5">{{form.password2.label}}</h5>
+            <span>{{form.password2}}</span>
+
+            <button class="button" type="submit">sign up</button>
+
+             </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

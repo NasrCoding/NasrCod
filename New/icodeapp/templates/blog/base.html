@@ -1,0 +1,91 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+
+ <div class="columns column is-12 box">
+    {% for item in category %}
+    <a href="{{item.get_absolute_url}}">
+        <h3 class="subtitle is-3 has-font-weight-light" style="margin-left: 50px ;">
+            <b>{{item.title}}</b></h3>
+    
+    </a>
+
+    {%endfor%}
+</div>
+<br>
+<section style="background-color: black;width: 100%;">
+    <h1 class="subtitle is-2" style="color: white; text-align: center;">popular</h1>
+
+</section>
+
+
+
+    <div class="columns" style="margin: 10px;">
+        {% for abc in popular %}
+        <div class="column" >
+            <a href="{{abc.get_absolute_url}}"  >
+                <img src="{{abc.image.url}}" alt="" style="width: 500px;height: 400px;">
+                <h1 class="title is-3">{{abc.title}}</h1>
+                <p>{{abc.description}}</p>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+<br><br><br><br>
+
+
+
+
+</div>
+<hr style="background-color: black;">
+
+<br><br><br>
+
+   
+        <div class="box">
+            <div class="columns">
+                {% for item in post %}
+               
+                    <div class="column box is-50">
+                        <a href="{{item.get_absolute_url}}">
+                            <img  src="{{item.image.url}}" alt="" style="width: 700px;height: 400px;">
+                            <h1 class="subtitle is-1">{{item.title}}</h1>
+                            <p>{{item.description}}</p>
+                        </a>
+                    </div>
+                
+                {% endfor %}
+            </div>
+        </div>
+   
+
+<br><br><br>
+
+
+        
+            
+                {% for item in all_posts %}
+                <div class="column box" >
+                
+                    
+                        <img class=""  src="{{item.image.url}}" alt="" style="width: 40%;height: 300px;">
+                        <h1 class="subtitle is-2">{{item.title}}</h1>
+                        <p>{{item.description}}</p>
+                   
+                    
+                </div>
+                {% endfor %}
+           
+
+    
+    
+
+{% endblock %}
